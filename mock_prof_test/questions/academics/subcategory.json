@@ -1,0 +1,62 @@
+[
+  {
+    "id": 13,
+    "question_text": "Match the subject with a relevant profession.",
+    "question_type": "list-matching",
+    "options": [
+      "Mathematics",
+      "Biology",
+      "Literature",
+      "Computer Science"
+    ],
+    "answer_structure": {
+      "type": "list-matching",
+      "options": [
+        "Architect",
+        "Physician",
+        "Novelist",
+        "Software Developer"
+      ],
+      "pairs": {
+        "Mathematics": "Architect",
+        "Biology": "Physician",
+        "Literature": "Novelist",
+        "Computer Science": "Software Developer"
+      }
+    },
+    "scoring_details": {
+      "Mathematics": [
+        {
+          "dimension": "academics",
+          "category": "technical",
+          "subcategory": "architecture",
+          "score": 1
+        }
+      ],
+      "Biology": [
+        {
+          "dimension": "academics",
+          "category": "medical",
+          "subcategory": "healthcare",
+          "score": 1
+        }
+      ],
+      "Literature": [
+        {
+          "dimension": "academics",
+          "category": "arts",
+          "subcategory": "writing",
+          "score": 1
+        }
+      ],
+      "Computer Science": [
+        {
+          "dimension": "academics",
+          "category": "technical",
+          "subcategory": "software",
+          "score": 1
+        }
+      ]
+    }
+  }
+]

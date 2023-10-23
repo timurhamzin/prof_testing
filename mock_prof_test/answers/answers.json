@@ -1,0 +1,278 @@
+[
+  {
+    "id": 7,
+    "user_id": 123,
+    "question_id": 7,
+    "answer": {
+      "selected": [
+        "Physics",
+        "Mathematics"
+      ],
+      "mindset_subcategory": [
+        {
+          "dimension": "mindset",
+          "category": "technical",
+          "subcategory": "Computational",
+          "score": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "user_id": 123,
+    "question_id": 8,
+    "answer": {
+      "selected": [
+        "Yes"
+      ],
+      "personality_type_category": [
+        {
+          "dimension": "personality type",
+          "category": "Extraversion",
+          "score": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "user_id": 123,
+    "question_id": 9,
+    "answer": {
+      "selected": [
+        "Go with the flow"
+      ],
+      "personality_type_category": [
+        {
+          "dimension": "personality type",
+          "category": "Perceiving",
+          "score": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "user_id": 123,
+    "question_id": 10,
+    "answer": {
+      "selected": [
+        "Look for patterns and possibilities"
+      ],
+      "personality_type_category": [
+        {
+          "dimension": "personality type",
+          "category": "Intuition",
+          "score": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "user_id": 123,
+    "question_id": 11,
+    "answer": {
+      "selected": [
+        "Consider people's feelings"
+      ],
+      "personality_type_category": [
+        {
+          "dimension": "personality type",
+          "category": "Feeling",
+          "score": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "user_id": 123,
+    "question_id": 12,
+    "answer": {
+      "selected": [
+        "Planner",
+        "Tester"
+      ],
+      "mindset_subcategory": [
+        {
+          "dimension": "mindset",
+          "category": "analytical",
+          "score": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": 100,
+    "user_id": 123,
+    "question_id": 100,
+    "answer": {
+      "selected": [
+        "Science",
+        "Mathematics"
+      ],
+      "mindset_subcategory": [
+        {
+          "dimension": "mindset",
+          "category": "analytical",
+          "subcategory": "Mathematics",
+          "score": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": 101,
+    "user_id": 123,
+    "question_id": 101,
+    "answer": {
+      "selected": [
+        "Frequently"
+      ],
+      "personality_type_subcategory": [
+        {
+          "dimension": "personality type",
+          "category": "Extraversion",
+          "subcategory": "Social",
+          "score": 3
+        }
+      ]
+    }
+  },
+  {
+    "id": 102,
+    "user_id": 123,
+    "question_id": 102,
+    "answer": {
+      "selected": [
+        "Yes"
+      ],
+      "mindset_subcategory": [
+        {
+          "dimension": "mindset",
+          "category": "technical",
+          "subcategory": "Computational",
+          "score": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": 103,
+    "user_id": 123,
+    "question_id": 103,
+    "answer": {
+      "selected": [
+        "Yes"
+      ],
+      "mindset_subcategory": [
+        {
+          "dimension": "mindset",
+          "category": "creative",
+          "subcategory": "Innovative",
+          "score": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "user_id": 123,
+    "question_id": 13,
+    "answer": {
+      "Mathematics": "Architect",
+      "Biology": "Physician",
+      "Literature": "Novelist",
+      "Computer Science": "Software Developer"
+    }
+  },
+  {
+    "id": 200,
+    "user_id": 123,
+    "question_id": 1,
+    "answer": {
+      "selected": [
+        "Technical"
+      ],
+      "academics_category": [
+        {
+          "dimension": "academics",
+          "category": "technical",
+          "score": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": 201,
+    "user_id": 123,
+    "question_id": 2,
+    "answer": {
+      "selected": [
+        "Software Development"
+      ],
+      "academics_category": [
+        {
+          "dimension": "academics",
+          "category": "technical",
+          "score": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": 202,
+    "user_id": 123,
+    "question_id": 104,
+    "answer": {
+      "selected": [
+        "Yes"
+      ],
+      "academics_category": [
+        {
+          "dimension": "academics",
+          "category": "humanities",
+          "score": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": 203,
+    "user_id": 123,
+    "question_id": 105,
+    "answer": {
+      "selected": [
+        "Renaissance"
+      ],
+      "academics_category": [
+        {
+          "dimension": "academics",
+          "category": "humanities",
+          "subcategory": "history",
+          "score": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 204,
+    "user_id": 123,
+    "question_id": 106,
+    "answer": {
+      "selected": [
+        "Frequently"
+      ],
+      "academics_category": [
+        {
+          "dimension": "academics",
+          "category": "humanities",
+          "subcategory": "literature",
+          "score": 3
+        }
+      ]
+    }
+  }
+]

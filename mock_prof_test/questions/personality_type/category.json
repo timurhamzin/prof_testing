@@ -1,0 +1,130 @@
+[
+  {
+    "id": 8,
+    "question_text": "Do you often find yourself leading a conversation?",
+    "question_type": "single",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "answer_structure": {
+      "type": "single",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    "scoring_details": {
+      "Yes": [
+        {
+          "dimension": "personality type",
+          "category": "Extraversion",
+          "score": 2
+        }
+      ],
+      "No": [
+        {
+          "dimension": "personality type",
+          "category": "Introversion",
+          "score": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "question_text": "Which best describes your approach to a new project?",
+    "question_type": "single",
+    "options": [
+      "Plan every detail",
+      "Go with the flow"
+    ],
+    "answer_structure": {
+      "type": "single",
+      "options": [
+        "Plan every detail",
+        "Go with the flow"
+      ]
+    },
+    "scoring_details": {
+      "Plan every detail": [
+        {
+          "dimension": "personality type",
+          "category": "Judging",
+          "score": 2
+        }
+      ],
+      "Go with the flow": [
+        {
+          "dimension": "personality type",
+          "category": "Perceiving",
+          "score": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "question_text": "How do you process new information?",
+    "question_type": "single",
+    "options": [
+      "Rely on past experiences",
+      "Look for patterns and possibilities"
+    ],
+    "answer_structure": {
+      "type": "single",
+      "options": [
+        "Rely on past experiences",
+        "Look for patterns and possibilities"
+      ]
+    },
+    "scoring_details": {
+      "Rely on past experiences": [
+        {
+          "dimension": "personality type",
+          "category": "Sensing",
+          "score": 2
+        }
+      ],
+      "Look for patterns and possibilities": [
+        {
+          "dimension": "personality type",
+          "category": "Intuition",
+          "score": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "question_text": "When faced with a decision, you are more likely to:",
+    "question_type": "single",
+    "options": [
+      "Analyze the facts",
+      "Consider people's feelings"
+    ],
+    "answer_structure": {
+      "type": "single",
+      "options": [
+        "Analyze the facts",
+        "Consider people's feelings"
+      ]
+    },
+    "scoring_details": {
+      "Analyze the facts": [
+        {
+          "dimension": "personality type",
+          "category": "Thinking",
+          "score": 2
+        }
+      ],
+      "Consider people's feelings": [
+        {
+          "dimension": "personality type",
+          "category": "Feeling",
+          "score": 2
+        }
+      ]
+    }
+  }
+]

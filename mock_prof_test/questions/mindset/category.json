@@ -1,0 +1,137 @@
+[
+  {
+    "id": 4,
+    "question_text": "Do you prefer practical or theoretical approaches?",
+    "question_type": "single",
+    "options": [
+      "Practical",
+      "Theoretical"
+    ],
+    "answer_structure": {
+      "type": "single",
+      "options": [
+        "Practical",
+        "Theoretical"
+      ]
+    },
+    "scoring_details": {
+      "Practical": [
+        {
+          "dimension": "mindset",
+          "category": "technical",
+          "score": 2
+        }
+      ],
+      "Theoretical": [
+        {
+          "dimension": "mindset",
+          "category": "analytical",
+          "score": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "question_text": "Select the activities you enjoy:",
+    "question_type": "multiple",
+    "options": [
+      "Solving complex problems",
+      "Creating new designs",
+      "Analyzing data",
+      "Building or repairing things"
+    ],
+    "answer_structure": {
+      "type": "multiple",
+      "options": [
+        "Solving complex problems",
+        "Creating new designs",
+        "Analyzing data",
+        "Building or repairing things"
+      ]
+    },
+    "scoring_details": {
+      "Solving complex problems": [
+        {
+          "dimension": "mindset",
+          "category": "technical",
+          "subcategory": "Computational",
+          "score": 2
+        }
+      ],
+      "Creating new designs": [
+        {
+          "dimension": "mindset",
+          "category": "creative",
+          "score": 2
+        }
+      ],
+      "Analyzing data": [
+        {
+          "dimension": "mindset",
+          "category": "analytical",
+          "score": 2
+        }
+      ],
+      "Building or repairing things": [
+        {
+          "dimension": "mindset",
+          "category": "technical",
+          "subcategory": "Hardware",
+          "score": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "question_text": "Which of these roles do you see yourself fitting into the most?",
+    "question_type": "multiple",
+    "options": [
+      "Visionary",
+      "Strategist",
+      "Implementer",
+      "Evaluator"
+    ],
+    "answer_structure": {
+      "type": "multiple",
+      "options": [
+        "Visionary",
+        "Strategist",
+        "Implementer",
+        "Evaluator"
+      ]
+    },
+    "scoring_details": {
+      "Visionary": [
+        {
+          "dimension": "mindset",
+          "category": "creative",
+          "score": 2
+        }
+      ],
+      "Strategist": [
+        {
+          "dimension": "mindset",
+          "category": "analytical",
+          "score": 2
+        }
+      ],
+      "Implementer": [
+        {
+          "dimension": "mindset",
+          "category": "technical",
+          "subcategory": "Hardware",
+          "score": 2
+        }
+      ],
+      "Evaluator": [
+        {
+          "dimension": "mindset",
+          "category": "analytical",
+          "score": 2
+        }
+      ]
+    }
+  }
+]
