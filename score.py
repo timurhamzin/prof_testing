@@ -6,12 +6,11 @@ DEBUG = False
 
 class VocationalScoring:
 
-    def __init__(self, user_id):
+    def __init__(self, user_id, questions, user_answers):
         self.user_id = user_id
         self.total_scores = {}
-
-    def fetch_answers(self):
-        return fetch_answers_for_user(self.user_id)
+        self.questions = questions
+        self.user_answers = user_answers  # fetch_answers_for_user(self.user_id)
 
     def get_or_init(self, dictionary, key, default=0):
         if key not in dictionary:
@@ -55,10 +54,12 @@ class VocationalScoring:
                 score = scoring.get('negative_score')
             self.process_score(dimension, category, subcategory, score)
 
+    def fetch_question_by_id(self, question_id):
+        return next((q for q in self.questions if q["id"] == question_id), None)
+
     def calculate_scores(self):
-        user_answers = self.fetch_answers()
-        for answer in user_answers:
-            question = fetch_question_by_id(answer['question_id'])
+        for answer in self.user_answers:
+            question = self.fetch_question_by_id(answer['question_id'])
             # if not question:
             #     id = answer['question_id']
             #     print(f'Question with id {id} is missing. Looking at question examples below, reconstruct it based on this answer: {answer}')
@@ -77,15 +78,12 @@ class VocationalScoring:
                 pass
             elif question['answer_structure']['type'] == 'list-matching':
                 for option, selected_value in answer['answer'].items():
-                    if selected_value == question['answer_structure']['pairs'][option]:
+                    correct_value = question['answer_structure']['pairs'].get(option)
+                    if correct_value is not None and selected_value == correct_value:
                         self.process_option(option, question, is_correct=True)
                     else:
                         self.process_option(option, question, is_correct=False)
         return self.total_scores
-
-
-def fetch_question_by_id(question_id):
-    return next((q for q in questions_table if q["id"] == question_id), None)
 
 
 def fetch_answers_for_user(user_id):
