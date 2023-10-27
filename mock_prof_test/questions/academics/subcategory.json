@@ -3,28 +3,18 @@
     "id": 13,
     "question_text": "Match the subject with a relevant profession.",
     "question_type": "list-matching",
-    "options": [
-      "Mathematics",
-      "Biology",
-      "Literature",
-      "Computer Science"
-    ],
+    "options": ["Mathematics", "Biology", "Literature", "Computer Science"],
     "answer_structure": {
       "type": "list-matching",
-      "options": [
-        "Architect",
-        "Physician",
-        "Novelist",
-        "Software Developer"
-      ],
-      "pairs": {
+      "options": ["Architect", "Physician", "Novelist", "Software Developer"]
+    },
+    "scoring_details": {
+      "correct_pairs": {
         "Mathematics": "Architect",
         "Biology": "Physician",
         "Literature": "Novelist",
         "Computer Science": "Software Developer"
-      }
-    },
-    "scoring_details": {
+      },
       "Mathematics": [
         {
           "dimension": "academics",

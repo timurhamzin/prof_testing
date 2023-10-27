@@ -3,28 +3,18 @@
     "id": 14,
     "question_text": "Match the skill or interest with a potential university major.",
     "question_type": "list-matching",
-    "options": [
-      "Analyzing Data",
-      "Drawing and Designing",
-      "Studying Cultures",
-      "Building Machines"
-    ],
+    "options": ["Analyzing Data", "Drawing and Designing", "Studying Cultures", "Building Machines"],
     "answer_structure": {
       "type": "list-matching",
-      "options": [
-        "Data Science",
-        "Graphic Design",
-        "Anthropology",
-        "Mechanical Engineering"
-      ],
-      "pairs": {
+      "options": ["Data Science", "Graphic Design", "Anthropology", "Mechanical Engineering"]
+    },
+    "scoring_details": {
+      "correct_pairs": {
         "Analyzing Data": "Data Science",
         "Drawing and Designing": "Graphic Design",
         "Studying Cultures": "Anthropology",
         "Building Machines": "Mechanical Engineering"
-      }
-    },
-    "scoring_details": {
+      },
       "Analyzing Data": [
         {
           "dimension": "interest",

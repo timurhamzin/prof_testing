@@ -4,6 +4,7 @@ from pathlib import Path
 
 DEBUG = False
 
+
 class VocationalScoring:
 
     def __init__(self, user_id, questions, user_answers):
@@ -36,8 +37,8 @@ class VocationalScoring:
             self.total_scores[dimension][category] = {}
 
         if not subcategory:
-            self.total_scores[dimension][category]['total'] = self.total_scores[dimension][category].get('total',
-                                                                                                         0) + score
+            self.total_scores[dimension][category]['total'] = (
+                    self.total_scores[dimension][category].get('total', 0) + score)
         else:
             if subcategory not in self.total_scores[dimension][category]:
                 self.total_scores[dimension][category][subcategory] = 0
@@ -49,8 +50,10 @@ class VocationalScoring:
             dimension = scoring.get('dimension')
             category = scoring.get('category')
             subcategory = scoring.get('subcategory')
-            score = scoring.get('score', 0)
-            if not is_correct and 'negative_score' in scoring:
+            score = 0
+            if is_correct:
+                score = scoring.get('score', 0)
+            elif 'negative_score' in scoring:
                 score = scoring.get('negative_score')
             self.process_score(dimension, category, subcategory, score)
 
@@ -60,25 +63,22 @@ class VocationalScoring:
     def calculate_scores(self):
         for answer in self.user_answers:
             question = self.fetch_question_by_id(answer['question_id'])
-            # if not question:
-            #     id = answer['question_id']
-            #     print(f'Question with id {id} is missing. Looking at question examples below, reconstruct it based on this answer: {answer}')
-            #     continue
-            # elif not question['answer_structure']:
-            #     id = answer['question_id']
-            #     print(f'Question with id {id} is missing answer_structure. Looking at question examples below, reconstruct it based on this answer: {answer}')
-            #     continue
             # if answer['question_id'] == 105:
             #     global DEBUG
             #     DEBUG = True
             if question['answer_structure']['type'] in ['multiple', 'single']:
-                for option in answer['answer'].get('selected', []):
-                    self.process_option(option, question)
+                selected_option = answer['answer'].get('selected')
+                if isinstance(selected_option, list):  # Handling old structure
+                    for option in selected_option:
+                        self.process_option(option, question)
+                elif isinstance(selected_option, str):  # Handling new structure
+                    self.process_option(selected_option, question)
             elif question['answer_structure']['type'] == 'open':
                 pass
             elif question['answer_structure']['type'] == 'list-matching':
-                for option, selected_value in answer['answer'].items():
-                    correct_value = question['answer_structure']['pairs'].get(option)
+                correct_pairs = question['scoring_details'].get('correct_pairs', {})
+                for option, selected_value in answer['answer']['selected'].items():
+                    correct_value = correct_pairs.get(option)
                     if correct_value is not None and selected_value == correct_value:
                         self.process_option(option, question, is_correct=True)
                     else:
@@ -95,6 +95,7 @@ def rate_open_question(text):
     if "break problems" in text:
         return {"analytical": 2}
     return {}
+
 
 def load_and_merge_questions():
     merged_questions = []
@@ -127,13 +128,16 @@ def run_mock_test():
     answers_table = load_answers()
     # answers_table = [answer for answer in load_answers() if answer['id'] == 204]
     # answers_table = [answer for answer in load_answers() if 'academics' in str(answer)]
-    with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/questions_table.json', 'w', encoding='utf-8') as fh:
+    with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/questions_table.json', 'w',
+              encoding='utf-8') as fh:
         fh.write(json.dumps(questions_table, ensure_ascii=False))
-    with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/answers_table.json', 'w',encoding='utf-8') as fh:
+    with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/answers_table.json', 'w',
+              encoding='utf-8') as fh:
         fh.write(json.dumps(answers_table, ensure_ascii=False))
     scorer = VocationalScoring(user_id=123)
     result_scores = scorer.calculate_scores()
-    with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/result_scores.json', 'w', encoding='utf-8') as fh:
+    with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/result_scores.json', 'w',
+              encoding='utf-8') as fh:
         fh.write(json.dumps(result_scores, ensure_ascii=False))
     return result_scores
 
