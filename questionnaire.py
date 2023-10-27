@@ -5,7 +5,12 @@ from plot import adjust_subcategory_scores, visualize_scores
 from score import load_and_merge_questions, VocationalScoring
 
 questions_table = load_and_merge_questions()
-questions_table = [q for q in questions_table if 'Anthropology' in str(q)]
+
+DEBUG = True
+
+# Debug
+if DEBUG:
+    questions_table = [q for q in questions_table if "multiple" in str(q)]
 
 with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/questions_table.json', 'w',
           encoding='utf-8') as fh:
@@ -25,13 +30,22 @@ with st.container():
     question = questions_table[st.session_state["current_question_index"]]
     col2.write(question["question_text"])
 
-    if question["question_type"] in ["single", "multiple"]:
+    if question["question_type"] == "single":
         stored_index_key = f"stored_answer_index_{st.session_state['current_question_index']}"
         stored_index = st.session_state.get(stored_index_key, 0)
         answer = col2.radio("Select an option:", question["options"], index=stored_index,
                             key=f"answer_{st.session_state['current_question_index']}")
         selected_index = question["options"].index(answer) if answer in question["options"] else 0
         st.session_state[f"stored_answer_index_{st.session_state['current_question_index']}"] = selected_index
+    elif question["question_type"] == "multiple":
+        stored_index_key = f"stored_answer_indices_{st.session_state['current_question_index']}"
+        stored_indices = st.session_state.get(stored_index_key, [])
+        answer = col2.multiselect(
+            "Select one or more options:", question["options"],
+            default=[question["options"][i] for i in stored_indices],
+            key=f"answer_{st.session_state['current_question_index']}")
+        selected_indices = [question["options"].index(opt) for opt in answer if opt in question["options"]]
+        st.session_state[stored_index_key] = selected_indices
 
     elif question["question_type"] == "list-matching":
         answer = {}
@@ -74,7 +88,7 @@ def fetch_answers_for_user(user_id):
 # print(fetch_answers_for_user(user_id=123))
 
 
-if st.session_state["current_question_index"] == len(questions_table) - 1 and st.button("Submit"):
+if ((st.session_state["current_question_index"] == len(questions_table) - 1) and st.button("Submit")) or DEBUG:
     answers_table = fetch_answers_for_user(user_id=123)
     with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/answers_table.json', 'w',
               encoding='utf-8') as fh:
@@ -88,6 +102,9 @@ if st.session_state["current_question_index"] == len(questions_table) - 1 and st
               encoding='utf-8') as fh:
         fh.write(json.dumps(result_scores, ensure_ascii=False))
     adjusted_scores = adjust_subcategory_scores(result_scores)
+    with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/adjusted_scores.json', 'w',
+              encoding='utf-8') as fh:
+        fh.write(json.dumps(result_scores, ensure_ascii=False))
     st.title("Vocational Placement Test Results")
     # print('adjusted_scores =', adjusted_scores)
     visualize_scores(adjusted_scores, show_zero_scores=True)
@@ -97,4 +114,5 @@ if st.session_state["current_question_index"] == len(questions_table) - 1 and st
         if scorer.fetch_question_by_id(answer['question_id'])["question_type"] == "list-matching":
             extracted_answers.append(answer)
     # print(json.dumps(extracted_answers, indent=2))
-    print(json.dumps(result_scores, indent=2))
+    print('result_scores', json.dumps(result_scores, indent=2))
+    print('adjusted_scores', json.dumps(adjusted_scores, indent=2))

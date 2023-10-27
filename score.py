@@ -70,9 +70,9 @@ class VocationalScoring:
                 selected_option = answer['answer'].get('selected')
                 if isinstance(selected_option, list):  # Handling old structure
                     for option in selected_option:
-                        self.process_option(option, question)
+                        self.process_option(option, question, is_correct=True)
                 elif isinstance(selected_option, str):  # Handling new structure
-                    self.process_option(selected_option, question)
+                    self.process_option(selected_option, question, is_correct=True)
             elif question['answer_structure']['type'] == 'open':
                 pass
             elif question['answer_structure']['type'] == 'list-matching':

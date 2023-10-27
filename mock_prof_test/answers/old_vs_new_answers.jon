@@ -1,0 +1,458 @@
+{
+  "old": [
+    {
+      "id": 7,
+      "user_id": 123,
+      "question_id": 7,
+      "answer": {
+        "selected": [
+          "Physics",
+          "Mathematics"
+        ],
+        "mindset_subcategory": [
+          {
+            "dimension": "mindset",
+            "category": "technical",
+            "subcategory": "Computational",
+            "score": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "user_id": 123,
+      "question_id": 8,
+      "answer": {
+        "selected": [
+          "Yes"
+        ],
+        "personality_type_category": [
+          {
+            "dimension": "personality type",
+            "category": "Extraversion",
+            "score": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "user_id": 123,
+      "question_id": 9,
+      "answer": {
+        "selected": [
+          "Go with the flow"
+        ],
+        "personality_type_category": [
+          {
+            "dimension": "personality type",
+            "category": "Perceiving",
+            "score": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "user_id": 123,
+      "question_id": 10,
+      "answer": {
+        "selected": [
+          "Look for patterns and possibilities"
+        ],
+        "personality_type_category": [
+          {
+            "dimension": "personality type",
+            "category": "Intuition",
+            "score": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "user_id": 123,
+      "question_id": 11,
+      "answer": {
+        "selected": [
+          "Consider people's feelings"
+        ],
+        "personality_type_category": [
+          {
+            "dimension": "personality type",
+            "category": "Feeling",
+            "score": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "user_id": 123,
+      "question_id": 12,
+      "answer": {
+        "selected": [
+          "Planner",
+          "Tester"
+        ],
+        "mindset_subcategory": [
+          {
+            "dimension": "mindset",
+            "category": "analytical",
+            "score": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": 100,
+      "user_id": 123,
+      "question_id": 100,
+      "answer": {
+        "selected": [
+          "Science",
+          "Mathematics"
+        ],
+        "mindset_subcategory": [
+          {
+            "dimension": "mindset",
+            "category": "analytical",
+            "subcategory": "Mathematics",
+            "score": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": 101,
+      "user_id": 123,
+      "question_id": 101,
+      "answer": {
+        "selected": [
+          "Frequently"
+        ],
+        "personality_type_subcategory": [
+          {
+            "dimension": "personality type",
+            "category": "Extraversion",
+            "subcategory": "Social",
+            "score": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": 102,
+      "user_id": 123,
+      "question_id": 102,
+      "answer": {
+        "selected": [
+          "Yes"
+        ],
+        "mindset_subcategory": [
+          {
+            "dimension": "mindset",
+            "category": "technical",
+            "subcategory": "Computational",
+            "score": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": 103,
+      "user_id": 123,
+      "question_id": 103,
+      "answer": {
+        "selected": [
+          "Yes"
+        ],
+        "mindset_subcategory": [
+          {
+            "dimension": "mindset",
+            "category": "creative",
+            "subcategory": "Innovative",
+            "score": 2
+          }
+        ]
+      }
+    }
+  ],
+  "new": [
+    {
+      "id": 1,
+      "user_id": 123,
+      "question_id": 8,
+      "answer": {
+        "selected": "No",
+        "scoring_details": {
+          "Yes": [
+            {
+              "dimension": "personality type",
+              "category": "Extraversion",
+              "score": 2
+            }
+          ],
+          "No": [
+            {
+              "dimension": "personality type",
+              "category": "Introversion",
+              "score": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 2,
+      "user_id": 123,
+      "question_id": 9,
+      "answer": {
+        "selected": "Go with the flow",
+        "scoring_details": {
+          "Plan every detail": [
+            {
+              "dimension": "personality type",
+              "category": "Judging",
+              "score": 2
+            }
+          ],
+          "Go with the flow": [
+            {
+              "dimension": "personality type",
+              "category": "Perceiving",
+              "score": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 3,
+      "user_id": 123,
+      "question_id": 10,
+      "answer": {
+        "selected": "Rely on past experiences",
+        "scoring_details": {
+          "Rely on past experiences": [
+            {
+              "dimension": "personality type",
+              "category": "Sensing",
+              "score": 2
+            }
+          ],
+          "Look for patterns and possibilities": [
+            {
+              "dimension": "personality type",
+              "category": "Intuition",
+              "score": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 4,
+      "user_id": 123,
+      "question_id": 11,
+      "answer": {
+        "selected": "Analyze the facts",
+        "scoring_details": {
+          "Analyze the facts": [
+            {
+              "dimension": "personality type",
+              "category": "Thinking",
+              "score": 2
+            }
+          ],
+          "Consider people's feelings": [
+            {
+              "dimension": "personality type",
+              "category": "Feeling",
+              "score": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 5,
+      "user_id": 123,
+      "question_id": 101,
+      "answer": {
+        "selected": "Frequently",
+        "scoring_details": {
+          "Frequently": [
+            {
+              "dimension": "personality type",
+              "category": "Extraversion",
+              "subcategory": "Social",
+              "score": 3
+            }
+          ],
+          "Rarely": [
+            {
+              "dimension": "personality type",
+              "category": "Introversion",
+              "subcategory": "Reserved",
+              "score": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 13,
+      "user_id": 123,
+      "question_id": 7,
+      "answer": {
+        "selected": "Physics",
+        "scoring_details": {
+          "Physics": [
+            {
+              "dimension": "mindset",
+              "category": "technical",
+              "subcategory": "Science",
+              "score": 2
+            }
+          ],
+          "Chemistry": [
+            {
+              "dimension": "mindset",
+              "category": "technical",
+              "subcategory": "Science",
+              "score": 2
+            }
+          ],
+          "Biology": [
+            {
+              "dimension": "mindset",
+              "category": "technical",
+              "subcategory": "Science",
+              "score": 2
+            }
+          ],
+          "Mathematics": [
+            {
+              "dimension": "mindset",
+              "category": "technical",
+              "subcategory": "Computational",
+              "score": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 14,
+      "user_id": 123,
+      "question_id": 12,
+      "answer": {
+        "selected": "Planner",
+        "scoring_details": {
+          "Planner": [
+            {
+              "dimension": "mindset",
+              "category": "technical",
+              "subcategory": "Computational",
+              "score": 2
+            }
+          ],
+          "Designer": [
+            {
+              "dimension": "mindset",
+              "category": "creative",
+              "score": 2
+            }
+          ],
+          "Implementer": [
+            {
+              "dimension": "mindset",
+              "category": "technical",
+              "subcategory": "Hardware",
+              "score": 2
+            }
+          ],
+          "Tester": [
+            {
+              "dimension": "mindset",
+              "category": "analytical",
+              "score": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 15,
+      "user_id": 123,
+      "question_id": 100,
+      "answer": {
+        "selected": "Science",
+        "scoring_details": {
+          "Science": [
+            {
+              "dimension": "mindset",
+              "category": "technical",
+              "subcategory": "Science",
+              "score": 2
+            }
+          ],
+          "Mathematics": [
+            {
+              "dimension": "mindset",
+              "category": "analytical",
+              "subcategory": "Mathematics",
+              "score": 3
+            }
+          ],
+          "Art": [
+            {
+              "dimension": "mindset",
+              "category": "creative",
+              "subcategory": "Artistic",
+              "score": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 16,
+      "user_id": 123,
+      "question_id": 102,
+      "answer": {
+        "selected": "No",
+        "scoring_details": {
+          "Yes": [
+            {
+              "dimension": "mindset",
+              "category": "technical",
+              "subcategory": "Computational",
+              "score": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 17,
+      "user_id": 123,
+      "question_id": 103,
+      "answer": {
+        "selected": "Yes",
+        "scoring_details": {
+          "Yes": [
+            {
+              "dimension": "mindset",
+              "category": "creative",
+              "subcategory": "Innovative",
+              "score": 2
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

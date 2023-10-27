@@ -1,3 +1,5 @@
+import json
+
 import plotly.express as px
 import streamlit as st
 
@@ -19,9 +21,14 @@ def tree_view(data, parent_name="", level=0):
 
 def adjust_subcategory_scores(data):
     for dimension, categories in data.items():
+        # Check if either all categories have the "total" key or none of them have it
+        total_keys_count = sum(1 for category, subcategories in categories.items() if "total" in subcategories)
+        if total_keys_count not in [0, len(categories)]:
+            raise ValueError(f"Inconsistent 'total' keys in categories for dimension {dimension}. Either all categories should have the 'total' key or none of them should.")
+
         for category, subcategories in categories.items():
-            total = subcategories.get("total", 0)
             subcategories_sum = sum([score for subcat, score in subcategories.items() if subcat != "total"])
+            total = subcategories.get("total", subcategories_sum)
 
             # Check if subcategories sum is not zero to avoid division by zero
             if subcategories_sum != 0:
@@ -32,14 +39,16 @@ def adjust_subcategory_scores(data):
                     else:
                         subcategories[subcategory] = score
 
+                subcategories["total"] = sum([score for subcat, score in subcategories.items() if subcat != "total"])
             # If there's no subcategories, just distribute the total equally among them
             else:
-                num_subcats = len(subcategories) - 1  # Exclude the "total" subcategory
+                num_subcats = len(subcategories) - (1 if "total" in subcategories else 0)  # Exclude the "total" subcategory
                 if num_subcats:
-                    equal_val = total / num_subcats
+                    equal_val = (total or num_subcats) / num_subcats
                     for subcategory in subcategories.keys():
                         if subcategory != "total":
                             subcategories[subcategory] = equal_val
+                    subcategories["total"] = sum([score for subcat, score in subcategories.items() if subcat != "total"])
 
     return data
 

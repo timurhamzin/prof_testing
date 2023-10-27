@@ -24,7 +24,7 @@
           "dimension": "mindset",
           "category": "technical",
           "subcategory": "Science",
-          "score": 2
+          "score": 1
         }
       ],
       "Chemistry": [
@@ -40,7 +40,7 @@
           "dimension": "mindset",
           "category": "technical",
           "subcategory": "Science",
-          "score": 2
+          "score": 3
         }
       ],
       "Mathematics": [
@@ -48,7 +48,7 @@
           "dimension": "mindset",
           "category": "technical",
           "subcategory": "Computational",
-          "score": 2
+          "score": 4
         }
       ]
     }
@@ -78,7 +78,7 @@
           "dimension": "mindset",
           "category": "technical",
           "subcategory": "Computational",
-          "score": 2
+          "score": 1
         }
       ],
       "Designer": [
@@ -93,14 +93,14 @@
           "dimension": "mindset",
           "category": "technical",
           "subcategory": "Hardware",
-          "score": 2
+          "score": 3
         }
       ],
       "Tester": [
         {
           "dimension": "mindset",
           "category": "analytical",
-          "score": 2
+          "score": 4
         }
       ]
     }
