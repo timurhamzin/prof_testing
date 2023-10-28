@@ -4,6 +4,25 @@ import json
 from plot import adjust_subcategory_scores, visualize_scores
 from score import load_and_merge_questions, VocationalScoring
 
+
+def fetch_answers_for_user(user_id):
+    answers_table = []
+    for i in range(len(questions_table)):
+        if f"stored_answer_{i}" in st.session_state:
+            answer_dict = {
+                "id": i + 1,  # Assuming id starts from 1 and increments sequentially
+                "user_id": user_id,
+                "question_id": questions_table[i]["id"],
+                "answer": {
+                    "selected": st.session_state[f"stored_answer_{i}"],
+                    "scoring_details": questions_table[i]["scoring_details"],
+                    "question_type": questions_table[i]["question_type"]
+                }
+            }
+            answers_table.append(answer_dict)
+    return answers_table
+
+
 questions_table = load_and_merge_questions()
 
 DEBUG = True
@@ -18,8 +37,19 @@ with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/q
 
 st.session_state["current_question_index"] = st.session_state.get("current_question_index", 0)
 
+# Add custom CSS for smaller font size and preformatted text
+st.markdown('<style>.small-font pre { font-size: 12px; }</style>', unsafe_allow_html=True)
+
 with st.container():
-    col1, col2, col3 = st.columns([1, 2, 1])
+    # Modify this line to add two additional columns for debugging
+    col0, col1, col2, col3, col4 = st.columns([2, 1, 2, 1, 2])
+
+    # Display the question text on the far-left column when DEBUG is True
+    if DEBUG:
+        question_text = json.dumps(
+            questions_table[st.session_state['current_question_index']], indent=2, ensure_ascii=False)
+        col0.code(f"Question: {question_text}", language="json")  # Using st.code for preformatted text
+
     if col1.button("Previous") and st.session_state["current_question_index"] > 0:
         st.session_state["current_question_index"] -= 1
         st.rerun()
@@ -29,6 +59,12 @@ with st.container():
     # with st.container():
     question = questions_table[st.session_state["current_question_index"]]
     col2.write(question["question_text"])
+
+    # Display the value of fetch_answers_for_user on the far-right column when DEBUG is True
+    if DEBUG:
+        debug_answers = fetch_answers_for_user(user_id=123)
+        debug_answers_text = json.dumps(debug_answers, indent=2, ensure_ascii=False)
+        col4.code(f"Debug - Answers: {debug_answers_text}", language="json")  # Using st.code for preformatted text
 
     if question["question_type"] == "single":
         stored_index_key = f"stored_answer_index_{st.session_state['current_question_index']}"
@@ -56,37 +92,14 @@ with st.container():
                                              index=stored_index, key=f"answer_{option}")
             answer[option] = selected_answer
 
-            selected_index = question["answer_structure"]["options"].index(selected_answer) if selected_answer in \
-                                                                                               question[
-                                                                                                   "answer_structure"][
-                                                                                                   "options"] else 0
+            selected_index = (
+                question["answer_structure"]["options"].index(selected_answer)
+                if selected_answer in question["answer_structure"]["options"] else 0)
             st.session_state[stored_index_key] = selected_index
     else:
         raise AssertionError(f'Question type `{question["question_type"]}` is undefined.')
 
     st.session_state[f"stored_answer_{st.session_state['current_question_index']}"] = answer
-
-
-def fetch_answers_for_user(user_id):
-    answers_table = []
-    for i in range(len(questions_table)):
-        if f"stored_answer_{i}" in st.session_state:
-            answer_dict = {
-                "id": i + 1,  # Assuming id starts from 1 and increments sequentially
-                "user_id": user_id,
-                "question_id": questions_table[i]["id"],
-                "answer": {
-                    "selected": st.session_state[f"stored_answer_{i}"],
-                    "scoring_details": questions_table[i]["scoring_details"],
-                    "question_type": questions_table[i]["question_type"]
-                }
-            }
-            answers_table.append(answer_dict)
-    return answers_table
-
-
-# print(fetch_answers_for_user(user_id=123))
-
 
 if ((st.session_state["current_question_index"] == len(questions_table) - 1) and st.button("Submit")) or DEBUG:
     answers_table = fetch_answers_for_user(user_id=123)
