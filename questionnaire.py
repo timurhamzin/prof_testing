@@ -1,3 +1,6 @@
+import copy
+import os
+
 import streamlit as st
 import json
 
@@ -26,13 +29,14 @@ def fetch_answers_for_user(user_id):
 questions_table = load_and_merge_questions()
 
 DEBUG = True
+BASE_DIR = 'mock_prof_test'
 
-# Debug
-if DEBUG:
-    questions_table = [q for q in questions_table if "multiple" in str(q)]
+# # Debug
+# if DEBUG:
+#     questions_table = [q for q in questions_table if "multiple" in str(q)]
 
-with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/questions_table.json', 'w',
-          encoding='utf-8') as fh:
+with open(os.path.join(BASE_DIR, 'example_output', 'questions_table.json'), 'w', encoding='utf-8') as fh:
+
     fh.write(json.dumps(questions_table, ensure_ascii=False))
 
 st.session_state["current_question_index"] = st.session_state.get("current_question_index", 0)
@@ -46,8 +50,9 @@ with st.container():
 
     # Display the question text on the far-left column when DEBUG is True
     if DEBUG:
-        question_text = json.dumps(
-            questions_table[st.session_state['current_question_index']], indent=2, ensure_ascii=False)
+        current_question = copy.deepcopy(questions_table[st.session_state['current_question_index']])
+        del current_question["scoring_details"]
+        question_text = json.dumps(current_question, indent=2, ensure_ascii=False)
         col0.code(f"Question: {question_text}", language="json")  # Using st.code for preformatted text
 
     if col1.button("Previous") and st.session_state["current_question_index"] > 0:
@@ -103,20 +108,17 @@ with st.container():
 
 if ((st.session_state["current_question_index"] == len(questions_table) - 1) and st.button("Submit")) or DEBUG:
     answers_table = fetch_answers_for_user(user_id=123)
-    with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/answers_table.json', 'w',
-              encoding='utf-8') as fh:
+    with open(os.path.join(BASE_DIR, 'example_output', 'answers_table.json'), 'w', encoding='utf-8') as fh:
         fh.write(json.dumps(answers_table, ensure_ascii=False))
 
     scorer = VocationalScoring(user_id=123, questions=questions_table, user_answers=answers_table)
     result_scores = scorer.calculate_scores()
     # print('result_scores =', result_scores)
 
-    with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/result_scores.json', 'w',
-              encoding='utf-8') as fh:
+    with open(os.path.join(BASE_DIR, 'example_output', 'result_scores.json'), 'w', encoding='utf-8') as fh:
         fh.write(json.dumps(result_scores, ensure_ascii=False))
     adjusted_scores = adjust_subcategory_scores(result_scores)
-    with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/adjusted_scores.json', 'w',
-              encoding='utf-8') as fh:
+    with open(os.path.join(BASE_DIR, 'example_output', 'adjusted_scores.json'), 'w', encoding='utf-8') as fh:
         fh.write(json.dumps(result_scores, ensure_ascii=False))
     st.title("Vocational Placement Test Results")
     # print('adjusted_scores =', adjusted_scores)
