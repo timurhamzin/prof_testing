@@ -24,7 +24,10 @@ def adjust_subcategory_scores(data):
         # Check if either all categories have the "total" key or none of them have it
         total_keys_count = sum(1 for category, subcategories in categories.items() if "total" in subcategories)
         if total_keys_count not in [0, len(categories)]:
-            raise ValueError(f"Inconsistent 'total' keys in categories for dimension {dimension}. Either all categories should have the 'total' key or none of them should.")
+            raise ValueError(
+                (f"Inconsistent 'total' keys in categories for dimension `{dimension}`. "
+                "Either all categories should have the 'total' key or none of them should."
+                 f"Violating categories: \n{json.dumps(categories, indent=2)}"))
 
         for category, subcategories in categories.items():
             subcategories_sum = sum([score for subcat, score in subcategories.items() if subcat != "total"])

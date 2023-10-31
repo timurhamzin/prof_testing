@@ -45,7 +45,7 @@ class VocationalScoring:
             self.total_scores[dimension][category][subcategory] += score
 
     def process_option(self, option, question, is_correct=True):
-        scorings = question['scoring_details'].get(option, [])
+        scorings = question['scoring_details'].get(question['options'][option], [])
         for scoring in scorings:
             dimension = scoring.get('dimension')
             category = scoring.get('category')
@@ -71,7 +71,7 @@ class VocationalScoring:
                 if isinstance(selected_option, list):  # Handling old structure
                     for option in selected_option:
                         self.process_option(option, question, is_correct=True)
-                elif isinstance(selected_option, str):  # Handling new structure
+                elif isinstance(selected_option, int):  # Handling new structure
                     self.process_option(selected_option, question, is_correct=True)
             elif question['answer_structure']['type'] == 'open':
                 pass

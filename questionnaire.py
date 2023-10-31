@@ -1,5 +1,6 @@
 import copy
 import os
+import time
 
 import streamlit as st
 import json
@@ -7,104 +8,197 @@ import json
 from plot import adjust_subcategory_scores, visualize_scores
 from score import load_and_merge_questions, VocationalScoring
 
+def rerun_script():
+    st.rerun()
 
-def fetch_answers_for_user(user_id):
+def validate_current_question_index():
+    index = st.session_state.get("current_question_index", 0)
+    max_index = len(questions_table) - 1
+    if index < 0 or index > max_index:
+        if max_index <= 0:
+            st.error("There are no questions for you query, try changing the filter value.")
+        else:
+            st.error("Invalid current question index. Resetting to 0.")
+            st.session_state["current_question_index"] = 0
+            rerun_script()
+
+
+def validate_session_state(key, expected_type, valid_range=None):
+    try:
+        value = st.session_state.get(key, None)
+        if value is None:
+            return True
+
+        if not isinstance(value, expected_type):
+            raise ValueError(f"Invalid type for key '{key}'. Expected {expected_type}.")
+
+        if valid_range is not None and value not in valid_range:
+            raise ValueError(f"Invalid range for key '{key}'. Should be in {valid_range}.")
+
+    except ValueError as e:
+        st.error(f"Error with key '{key}' in session state: {e}")
+        return False
+
+    return True
+
+
+def fetch_answers_for_user(user_id, stored_answer_key=None):
     answers_table = []
-    for i in range(len(questions_table)):
-        if f"stored_answer_{i}" in st.session_state:
+    for question in questions_table:
+        question_id = question['id']
+        stored_key = get_stored_answer_key(question_id)
+
+        if stored_answer_key is not None and stored_key != stored_answer_key:
+            continue
+
+        if stored_key in st.session_state:
             answer_dict = {
-                "id": i + 1,  # Assuming id starts from 1 and increments sequentially
-                "user_id": user_id,
-                "question_id": questions_table[i]["id"],
-                "answer": {
-                    "selected": st.session_state[f"stored_answer_{i}"],
-                    "scoring_details": questions_table[i]["scoring_details"],
-                    "question_type": questions_table[i]["question_type"]
+                'id': question_id,
+                'user_id': user_id,
+                'test_id': 0,
+                'question_id': question_id,
+                'answer': {
+                    'selected': st.session_state[stored_key],
+                    'scoring_details (FOR DEBUG ONLY)': question['scoring_details']
                 }
             }
             answers_table.append(answer_dict)
-    return answers_table
 
+            if stored_answer_key is not None:
+                return answers_table  # This will return a list with one item
+
+    return answers_table  # This will return the full list
+
+
+def get_stored_answer_key(question_id):
+    return f"answer_for_question_{question_id}"
+
+
+def handle_single_question(question, col2):
+    question_id = question["id"]
+    stored_answer_key = get_stored_answer_key(question_id)
+    if stored_answer_key not in st.session_state:
+        st.session_state[stored_answer_key] = 0  # Initialize
+    stored_answer = st.session_state[stored_answer_key]
+    answer = col2.radio(
+        "Select an option:", question["options"],
+        index=stored_answer,
+        key=f"answer_{question_id}"
+    )
+    st.session_state[stored_answer_key] = question["options"].index(answer)
+
+def handle_multiple_question(question, col2):
+    question_id = question['id']
+    stored_answer_key = get_stored_answer_key(question_id)
+    if not validate_session_state(stored_answer_key, list):
+        return
+    stored_indices = st.session_state.get(stored_answer_key, [])
+    answer = col2.multiselect(
+        "Select one or more options:", question["options"],
+        default=[question["options"][i] for i in stored_indices],
+        key=f"answer_{st.session_state['current_question_index']}"
+    )
+    st.session_state[stored_answer_key] = [question["options"].index(opt) for opt in answer]
+    return answer
+
+
+def handle_list_matching_question(question, col2):
+    answer = {}
+    for option in question['options']:
+        # Generate the stored key using the new get_stored_answer_key function
+        question_id = question["id"]  # Assuming you have a 'question_id' field in each question
+        stored_index_key = get_stored_answer_key(f"{question_id}_{option}")
+
+        # Validation and fetching of stored index from session state
+        if not validate_session_state(stored_index_key, int, range(len(question['answer_structure']['options']))):
+            continue
+        stored_index = st.session_state.get(stored_index_key, 0)
+
+        # Showing the Streamlit widget and handling user interaction
+        selected_answer = col2.selectbox(
+            f'Match {option} with:',
+            question['answer_structure']['options'],
+            index=stored_index,
+            key=f'answer_{option}'
+        )
+
+        # Storing the selected answer
+        answer[option] = selected_answer
+
+        # Updating the session state with the selected index
+        st.session_state[stored_index_key] = question['answer_structure']['options'].index(selected_answer)
+
+    return answer
+
+# Fetch query parameters
+query_params = st.experimental_get_query_params()
+
+# Set DEBUG from query parameters
+DEBUG = query_params.get('debug', [False])[0]
+if isinstance(DEBUG, str) and DEBUG.lower() == 'true':
+    DEBUG = True
+elif isinstance(DEBUG, str) and DEBUG.lower() == 'false':
+    DEBUG = False
+
+filter_param = query_params.get('filter', [''])[0]  # default to an empty string
+filter = filter_param.split(',')
+if isinstance(filter, list):  # Ensure it's a list
+    filter = [str(f) for f in filter]  # Convert all to string just in case
 
 questions_table = load_and_merge_questions()
+if filter:
+    questions_table = [q for q in questions_table if any(f in str(q) for f in filter)]
 
-DEBUG = True
+
+validate_current_question_index()
+
 BASE_DIR = 'mock_prof_test'
 
-# # Debug
-# if DEBUG:
-#     questions_table = [q for q in questions_table if "multiple" in str(q)]
 
 with open(os.path.join(BASE_DIR, 'example_output', 'questions_table.json'), 'w', encoding='utf-8') as fh:
-
     fh.write(json.dumps(questions_table, ensure_ascii=False))
 
 st.session_state["current_question_index"] = st.session_state.get("current_question_index", 0)
 
-# Add custom CSS for smaller font size and preformatted text
 st.markdown('<style>.small-font pre { font-size: 12px; }</style>', unsafe_allow_html=True)
 
 with st.container():
-    # Modify this line to add two additional columns for debugging
     col0, col1, col2, col3, col4 = st.columns([2, 1, 2, 1, 2])
 
-    # Display the question text on the far-left column when DEBUG is True
-    if DEBUG:
+    if DEBUG and 'current_question_index' in st.session_state:
         current_question = copy.deepcopy(questions_table[st.session_state['current_question_index']])
         del current_question["scoring_details"]
-        question_text = json.dumps(current_question, indent=2, ensure_ascii=False)
-        col0.code(f"Question: {question_text}", language="json")  # Using st.code for preformatted text
+        question_data = json.dumps(current_question, indent=2, ensure_ascii=False)
+        col0.code(f"Input: {question_data}", language="json")
 
     if col1.button("Previous") and st.session_state["current_question_index"] > 0:
         st.session_state["current_question_index"] -= 1
-        st.rerun()
+        validate_current_question_index()  # Add this line
+        rerun_script()
+
     if col3.button("Next") and st.session_state["current_question_index"] < len(questions_table) - 1:
         st.session_state["current_question_index"] += 1
-        st.rerun()
-    # with st.container():
-    question = questions_table[st.session_state["current_question_index"]]
+        validate_current_question_index()  # Add this line
+        rerun_script()
+
+    question: dict = questions_table[st.session_state["current_question_index"]]
     col2.write(question["question_text"])
 
-    # Display the value of fetch_answers_for_user on the far-right column when DEBUG is True
-    if DEBUG:
-        debug_answers = fetch_answers_for_user(user_id=123)
-        debug_answers_text = json.dumps(debug_answers, indent=2, ensure_ascii=False)
-        col4.code(f"Debug - Answers: {debug_answers_text}", language="json")  # Using st.code for preformatted text
-
     if question["question_type"] == "single":
-        stored_index_key = f"stored_answer_index_{st.session_state['current_question_index']}"
-        stored_index = st.session_state.get(stored_index_key, 0)
-        answer = col2.radio("Select an option:", question["options"], index=stored_index,
-                            key=f"answer_{st.session_state['current_question_index']}")
-        selected_index = question["options"].index(answer) if answer in question["options"] else 0
-        st.session_state[f"stored_answer_index_{st.session_state['current_question_index']}"] = selected_index
+        answer = handle_single_question(question, col2)
     elif question["question_type"] == "multiple":
-        stored_index_key = f"stored_answer_indices_{st.session_state['current_question_index']}"
-        stored_indices = st.session_state.get(stored_index_key, [])
-        answer = col2.multiselect(
-            "Select one or more options:", question["options"],
-            default=[question["options"][i] for i in stored_indices],
-            key=f"answer_{st.session_state['current_question_index']}")
-        selected_indices = [question["options"].index(opt) for opt in answer if opt in question["options"]]
-        st.session_state[stored_index_key] = selected_indices
-
+        answer = handle_multiple_question(question, col2)
     elif question["question_type"] == "list-matching":
-        answer = {}
-        for option in question["options"]:
-            stored_index_key = f"stored_answer_index_{option}"
-            stored_index = st.session_state.get(stored_index_key, 0)
-            selected_answer = col2.selectbox(f"Match {option} with:", question["answer_structure"]["options"],
-                                             index=stored_index, key=f"answer_{option}")
-            answer[option] = selected_answer
-
-            selected_index = (
-                question["answer_structure"]["options"].index(selected_answer)
-                if selected_answer in question["answer_structure"]["options"] else 0)
-            st.session_state[stored_index_key] = selected_index
+        answer = handle_list_matching_question(question, col2)
     else:
         raise AssertionError(f'Question type `{question["question_type"]}` is undefined.')
 
-    st.session_state[f"stored_answer_{st.session_state['current_question_index']}"] = answer
+    # st.session_state[f"stored_answer_{st.session_state['current_question_index']}"] = answer
+
+if DEBUG:
+    debug_answers = fetch_answers_for_user(user_id=123, stored_answer_key=get_stored_answer_key(question["id"]))
+    debug_answers_text = json.dumps(debug_answers, indent=2, ensure_ascii=False)
+    col4.code(f"Output - Answers: {debug_answers_text}", language="json")
 
 if ((st.session_state["current_question_index"] == len(questions_table) - 1) and st.button("Submit")) or DEBUG:
     answers_table = fetch_answers_for_user(user_id=123)
