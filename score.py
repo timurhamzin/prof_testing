@@ -1,28 +1,30 @@
+"""
+This module contains the ProfilingTestScoring class responsible for calculating profiling test scores.
+"""
 import json
-from collections import defaultdict, Counter
-from pathlib import Path
-
-DEBUG = False
+from typing import List, Dict, Optional
 
 
-class VocationalScoring:
+class ProfilingTestScoring:
+    """
+    A class to represent the scoring mechanism for profiling tests.
 
-    def __init__(self, user_id, questions, user_answers):
+    Attributes:
+        user_id (int): ID of the user taking the test.
+        questions (List[Dict]): List of questions in the test.
+        user_answers (List[Dict]): List of user answers.
+        total_scores (Dict): A nested dictionary to hold the total scores.
+    """
+
+    def __init__(self, user_id: int, questions: List[Dict], user_answers: List[Dict]):
+        """Initialize a ProfilingTestScoring object."""
         self.user_id = user_id
         self.total_scores = {}
         self.questions = questions
-        self.user_answers = user_answers  # fetch_answers_for_user(self.user_id)
+        self.user_answers = user_answers
 
-    def get_or_init(self, dictionary, key, default=0):
-        if key not in dictionary:
-            dictionary[key] = default
-        return dictionary[key]
-
-    def process_score(self, dimension, category, subcategory, score):
-        # global DEBUG
-        # if DEBUG:
-        #     pdb.set_trace()
-        #     DEBUG = False
+    def process_score(self, dimension: str, category: Optional[str], subcategory: Optional[str], score: int):
+        """Process and update the scores for a given dimension, category, and subcategory."""
         if not all([dimension, category, score]):
             return
 
@@ -44,8 +46,9 @@ class VocationalScoring:
                 self.total_scores[dimension][category][subcategory] = 0
             self.total_scores[dimension][category][subcategory] += score
 
-    def process_option(self, question, *, is_correct=True, option_index=None, or_option_value=None):
-
+    def process_option(self, question: Dict, *, is_correct: bool = True, option_index: Optional[int] = None,
+                       or_option_value: Optional[str] = None):
+        """Process the scoring for a given question option."""
         if option_index is not None:
             scorings = question['scoring_details'].get(question['options'][option_index], [])
         elif or_option_value is not None:
@@ -64,16 +67,15 @@ class VocationalScoring:
                 score = scoring.get('negative_score')
             self.process_score(dimension, category, subcategory, score)
 
-    def fetch_question_by_id(self, question_id):
-        return next((q for q in self.questions if q["id"] == question_id), None)
+    def fetch_question_by_id(self, question_id: int) -> Optional[Dict]:
+        """Fetch a question by its ID."""
+        return next((q for q in self.questions if q['id'] == question_id), None)
 
-    def calculate_scores_for_profiling_test(self):
+    def calculate_scores_for_profiling_test(self) -> Dict:
+        """Calculate the total scores for a profiling test."""
         for answer in self.user_answers:
             question = self.fetch_question_by_id(answer['question_id'])
-            # if answer['question_id'] == 105:
-            #     global DEBUG
-            #     DEBUG = True
-            if question['answer_structure']["question_type"] in ['multiple', 'single']:
+            if question['answer_structure']['question_type'] in ['multiple', 'single']:
                 selected_options = answer['answer'].get('selected')
                 if isinstance(selected_options, list):
                     for option_index in selected_options:
@@ -82,7 +84,7 @@ class VocationalScoring:
                     option_index = selected_options
                     self.process_option(question, is_correct=True, option_index=option_index)
             elif question['answer_structure']['question_type'] == 'open':
-                pass
+                raise NotImplemented('Implement logic for `open` questions in `calculate_scores_for_profiling_test`')
             elif question['answer_structure']['question_type'] == 'list-matching':
                 correct_pairs = question['scoring_details'].get('correct_pairs', {})
                 for option_value, selected_index in answer['answer']['selected'].items():
@@ -95,61 +97,40 @@ class VocationalScoring:
         return self.total_scores
 
 
-def fetch_answers_for_user(user_id):
-    return [answer for answer in answers_table if answer["user_id"] == user_id]
+def adjust_subcategory_scores(data):
+    for dimension, categories in data.items():
+        # Check if either all categories have the 'total' key or none of them have it
+        total_keys_count = sum(1 for category, subcategories in categories.items() if 'total' in subcategories)
+        if total_keys_count not in [0, len(categories)]:
+            raise ValueError(
+                (f'Inconsistent \'total\' keys in categories for dimension `{dimension}`. '
+                 'Either all categories should have the \'total\' key or none of them should.'
+                 f'Violating categories: \n{json.dumps(categories, indent=2)}'))
 
+        for category, subcategories in categories.items():
+            subcategories_sum = sum([score for subcat, score in subcategories.items() if subcat != 'total'])
+            total = subcategories.get('total', subcategories_sum)
 
-def rate_open_question(text):
-    # This is a mock implementation. Typically, this would use NLP or some heuristic to rate the answer.
-    if "break problems" in text:
-        return {"analytical": 2}
-    return {}
+            # Check if subcategories sum is not zero to avoid division by zero
+            if subcategories_sum != 0:
+                factor = total / subcategories_sum
+                for subcategory, score in subcategories.items():
+                    if subcategory != 'total':
+                        subcategories[subcategory] = score * factor
+                    else:
+                        subcategories[subcategory] = score
 
+                subcategories['total'] = sum([score for subcat, score in subcategories.items() if subcat != 'total'])
+            # If there's no subcategories, just distribute the total equally among them
+            else:
+                num_subcats = len(subcategories) - (
+                    1 if 'total' in subcategories else 0)  # Exclude the 'total' subcategory
+                if num_subcats:
+                    equal_val = (total or num_subcats) / num_subcats
+                    for subcategory in subcategories.keys():
+                        if subcategory != 'total':
+                            subcategories[subcategory] = equal_val
+                    subcategories['total'] = sum(
+                        [score for subcat, score in subcategories.items() if subcat != 'total'])
 
-def load_and_merge_questions():
-    merged_questions = []
-    dimensions_folder = Path("mock_prof_test/questions")
-    for dimension_folder in dimensions_folder.iterdir():
-        if dimension_folder.is_dir():
-            category_path = dimension_folder / 'category.json'
-            subcategory_path = dimension_folder / 'subcategory.json'
-            if category_path.exists():
-                with open(category_path, 'r') as f:
-                    category_questions = json.load(f)
-                    merged_questions.extend(category_questions)
-            if subcategory_path.exists():
-                with open(subcategory_path, 'r') as f:
-                    subcategory_questions = json.load(f)
-                    merged_questions.extend(subcategory_questions)
-    return merged_questions
-
-
-def load_answers():
-    answers_fpath = Path("mock_prof_test/answers/answers.json")
-    with open(answers_fpath, 'r', encoding='utf-8') as f:
-        return json.load(f)
-
-
-def run_mock_test():
-    global questions_table
-    global answers_table
-    questions_table = load_and_merge_questions()
-    answers_table = load_answers()
-    # answers_table = [answer for answer in load_answers() if answer['id'] == 204]
-    # answers_table = [answer for answer in load_answers() if 'academics' in str(answer)]
-    with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/questions_table.json', 'w',
-              encoding='utf-8') as fh:
-        fh.write(json.dumps(questions_table, ensure_ascii=False))
-    with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/answers_table.json', 'w',
-              encoding='utf-8') as fh:
-        fh.write(json.dumps(answers_table, ensure_ascii=False))
-    scorer = VocationalScoring(user_id=123)
-    result_scores = scorer.calculate_scores_for_profiling_test()
-    with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/result_scores.json', 'w',
-              encoding='utf-8') as fh:
-        fh.write(json.dumps(result_scores, ensure_ascii=False))
-    return result_scores
-
-
-if __name__ == "__main__":
-    run_mock_test()
+    return data
