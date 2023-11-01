@@ -44,8 +44,15 @@ class VocationalScoring:
                 self.total_scores[dimension][category][subcategory] = 0
             self.total_scores[dimension][category][subcategory] += score
 
-    def process_option(self, option, question, is_correct=True):
-        scorings = question['scoring_details'].get(question['options'][option], [])
+    def process_option(self, question, *, is_correct=True, option_index=None, or_option_value=None):
+
+        if option_index is not None:
+            scorings = question['scoring_details'].get(question['options'][option_index], [])
+        elif or_option_value is not None:
+            scorings = question['scoring_details'].get(or_option_value, [])
+        else:
+            assert False, 'Either `option_index` or `or_option_value` must be set.'
+
         for scoring in scorings:
             dimension = scoring.get('dimension')
             category = scoring.get('category')
@@ -60,29 +67,31 @@ class VocationalScoring:
     def fetch_question_by_id(self, question_id):
         return next((q for q in self.questions if q["id"] == question_id), None)
 
-    def calculate_scores(self):
+    def calculate_scores_for_profiling_test(self):
         for answer in self.user_answers:
             question = self.fetch_question_by_id(answer['question_id'])
             # if answer['question_id'] == 105:
             #     global DEBUG
             #     DEBUG = True
-            if question['answer_structure']['type'] in ['multiple', 'single']:
-                selected_option = answer['answer'].get('selected')
-                if isinstance(selected_option, list):  # Handling old structure
-                    for option in selected_option:
-                        self.process_option(option, question, is_correct=True)
-                elif isinstance(selected_option, int):  # Handling new structure
-                    self.process_option(selected_option, question, is_correct=True)
-            elif question['answer_structure']['type'] == 'open':
+            if question['answer_structure']["question_type"] in ['multiple', 'single']:
+                selected_options = answer['answer'].get('selected')
+                if isinstance(selected_options, list):
+                    for option_index in selected_options:
+                        self.process_option(question, is_correct=True, option_index=option_index)
+                elif isinstance(selected_options, int):
+                    option_index = selected_options
+                    self.process_option(question, is_correct=True, option_index=option_index)
+            elif question['answer_structure']['question_type'] == 'open':
                 pass
-            elif question['answer_structure']['type'] == 'list-matching':
+            elif question['answer_structure']['question_type'] == 'list-matching':
                 correct_pairs = question['scoring_details'].get('correct_pairs', {})
-                for option, selected_value in answer['answer']['selected'].items():
-                    correct_value = correct_pairs.get(option)
+                for option_value, selected_index in answer['answer']['selected'].items():
+                    selected_value = question['answer_structure']['options'][selected_index]
+                    correct_value = correct_pairs.get(option_value)
                     if correct_value is not None and selected_value == correct_value:
-                        self.process_option(option, question, is_correct=True)
+                        self.process_option(question, is_correct=True, or_option_value=option_value)
                     else:
-                        self.process_option(option, question, is_correct=False)
+                        self.process_option(question, is_correct=False, or_option_value=option_value)
         return self.total_scores
 
 
@@ -135,7 +144,7 @@ def run_mock_test():
               encoding='utf-8') as fh:
         fh.write(json.dumps(answers_table, ensure_ascii=False))
     scorer = VocationalScoring(user_id=123)
-    result_scores = scorer.calculate_scores()
+    result_scores = scorer.calculate_scores_for_profiling_test()
     with open('/home/timur/Work/univero/prof_testing/mock_prof_test/example_output/result_scores.json', 'w',
               encoding='utf-8') as fh:
         fh.write(json.dumps(result_scores, ensure_ascii=False))

@@ -5,7 +5,7 @@
     "question_type": "list-matching",
     "options": ["Analyzing Data", "Drawing and Designing", "Studying Cultures", "Building Machines"],
     "answer_structure": {
-      "type": "list-matching",
+      "question_type": "list-matching",
       "options": ["Data Science", "Graphic Design", "Anthropology", "Mechanical Engineering"]
     },
     "scoring_details": {

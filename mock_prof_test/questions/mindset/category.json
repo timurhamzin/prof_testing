@@ -8,7 +8,7 @@
       "Theoretical"
     ],
     "answer_structure": {
-      "type": "single",
+      "question_type": "single",
       "options": [
         "Practical",
         "Theoretical"
@@ -42,7 +42,7 @@
       "Building or repairing things"
     ],
     "answer_structure": {
-      "type": "multiple",
+      "question_type": "multiple",
       "options": [
         "Solving complex problems",
         "Creating new designs",
@@ -92,7 +92,7 @@
       "Evaluator"
     ],
     "answer_structure": {
-      "type": "multiple",
+      "question_type": "multiple",
       "options": [
         "Visionary",
         "Strategist",

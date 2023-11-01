@@ -1,15 +1,16 @@
 import copy
+import json
 import os
-import time
 
 import streamlit as st
-import json
 
 from plot import adjust_subcategory_scores, visualize_scores
 from score import load_and_merge_questions, VocationalScoring
 
+
 def rerun_script():
     st.rerun()
+
 
 def validate_current_question_index():
     index = st.session_state.get("current_question_index", 0)
@@ -46,46 +47,61 @@ def fetch_answers_for_user(user_id, stored_answer_key=None):
     answers_table = []
     for question in questions_table:
         question_id = question['id']
-        stored_key = get_stored_answer_key(question_id)
-
-        if stored_answer_key is not None and stored_key != stored_answer_key:
-            continue
-
-        if stored_key in st.session_state:
-            answer_dict = {
-                'id': question_id,
-                'user_id': user_id,
-                'test_id': 0,
-                'question_id': question_id,
-                'answer': {
-                    'selected': st.session_state[stored_key],
-                    'scoring_details (FOR DEBUG ONLY)': question['scoring_details']
-                }
-            }
-            answers_table.append(answer_dict)
-
-            if stored_answer_key is not None:
-                return answers_table  # This will return a list with one item
-
-    return answers_table  # This will return the full list
+        question_type = question['question_type']
+        if question_type == 'list-matching':
+            # Create a dictionary to store all selected values for different options
+            if stored_answer_key is not None and stored_answer_key != stored_answer_key:
+                continue
+            selected_answers = {}
+            for option in question['options']:
+                stored_option_key = get_stored_answer_key(f'{question_id}_{option}')
+                if stored_option_key in st.session_state:
+                    selected_answers[option] = st.session_state[stored_option_key]
+            # Append the combined answer dictionary to answers_table for list-matching question type
+            if selected_answers:
+                answer_dict = {'id': question_id, 'user_id': user_id, 'test_id': 0, 'question_id': question_id, 'answer': {'selected': selected_answers, 'scoring_details (FOR DEBUG ONLY)': question['scoring_details']}}
+                answers_table.append(answer_dict)
+                if stored_answer_key is not None and stored_answer_key == get_stored_answer_key(question_id):
+                    return answers_table
+        elif question_type in ['single', 'multiple']:
+            stored_option_key = get_stored_answer_key(question_id)
+            if stored_answer_key is not None and stored_option_key != stored_answer_key:
+                continue
+            if stored_option_key in st.session_state:
+                answer_dict = {'id': question_id, 'user_id': user_id, 'test_id': 0, 'question_id': question_id, 'answer': {'selected': st.session_state[stored_option_key], 'scoring_details (FOR DEBUG ONLY)': question['scoring_details']}}
+                answers_table.append(answer_dict)
+                if stored_answer_key is not None:
+                    return answers_table
+        else:
+            raise ValueError(f'Illegal value for question type: `{question_type}`.')
+    return answers_table
 
 
 def get_stored_answer_key(question_id):
     return f"answer_for_question_{question_id}"
 
 
-def handle_single_question(question, col2):
+def handle_single_question(question, col):
+    global answer
     question_id = question["id"]
     stored_answer_key = get_stored_answer_key(question_id)
     if stored_answer_key not in st.session_state:
         st.session_state[stored_answer_key] = 0  # Initialize
+
     stored_answer = st.session_state[stored_answer_key]
-    answer = col2.radio(
+
+    answer = col.radio(
         "Select an option:", question["options"],
         index=stored_answer,
         key=f"answer_{question_id}"
     )
-    st.session_state[stored_answer_key] = question["options"].index(answer)
+
+    new_answer_index = question["options"].index(answer)
+    if new_answer_index != stored_answer:
+        st.session_state[stored_answer_key] = new_answer_index
+        st.rerun()
+    return answer
+
 
 def handle_multiple_question(question, col2):
     question_id = question['id']
@@ -96,39 +112,45 @@ def handle_multiple_question(question, col2):
     answer = col2.multiselect(
         "Select one or more options:", question["options"],
         default=[question["options"][i] for i in stored_indices],
-        key=f"answer_{st.session_state['current_question_index']}"
+        key=f"answer_{question_id}"
     )
-    st.session_state[stored_answer_key] = [question["options"].index(opt) for opt in answer]
+
+    new_answer_indices = [question["options"].index(opt) for opt in answer]
+    if new_answer_indices != stored_indices:
+        st.session_state[stored_answer_key] = new_answer_indices
+        st.rerun()
     return answer
 
 
 def handle_list_matching_question(question, col2):
     answer = {}
     for option in question['options']:
-        # Generate the stored key using the new get_stored_answer_key function
-        question_id = question["id"]  # Assuming you have a 'question_id' field in each question
-        stored_index_key = get_stored_answer_key(f"{question_id}_{option}")
+        question_id = question["id"]
+        stored_answer_key = get_stored_answer_key(f"{question_id}_{option}")
 
-        # Validation and fetching of stored index from session state
-        if not validate_session_state(stored_index_key, int, range(len(question['answer_structure']['options']))):
+        if not validate_session_state(stored_answer_key, int, range(len(question['answer_structure']['options']))):
             continue
-        stored_index = st.session_state.get(stored_index_key, 0)
+        stored_index = st.session_state.get(stored_answer_key, 0)
 
-        # Showing the Streamlit widget and handling user interaction
         selected_answer = col2.selectbox(
             f'Match {option} with:',
             question['answer_structure']['options'],
             index=stored_index,
-            key=f'answer_{option}'
+            key=f"answer_{question_id}_{option}"
         )
 
-        # Storing the selected answer
-        answer[option] = selected_answer
+        new_answer_index = question['answer_structure']['options'].index(selected_answer)
+        if new_answer_index != stored_index:
+            st.session_state[stored_answer_key] = new_answer_index
+            st.rerun()
 
-        # Updating the session state with the selected index
-        st.session_state[stored_index_key] = question['answer_structure']['options'].index(selected_answer)
+        answer[option] = selected_answer
+        st.session_state[stored_answer_key] = question['answer_structure']['options'].index(selected_answer)
 
     return answer
+
+
+st.set_page_config(layout='wide')
 
 # Fetch query parameters
 query_params = st.experimental_get_query_params()
@@ -149,11 +171,9 @@ questions_table = load_and_merge_questions()
 if filter:
     questions_table = [q for q in questions_table if any(f in str(q) for f in filter)]
 
-
 validate_current_question_index()
 
 BASE_DIR = 'mock_prof_test'
-
 
 with open(os.path.join(BASE_DIR, 'example_output', 'questions_table.json'), 'w', encoding='utf-8') as fh:
     fh.write(json.dumps(questions_table, ensure_ascii=False))
@@ -206,7 +226,7 @@ if ((st.session_state["current_question_index"] == len(questions_table) - 1) and
         fh.write(json.dumps(answers_table, ensure_ascii=False))
 
     scorer = VocationalScoring(user_id=123, questions=questions_table, user_answers=answers_table)
-    result_scores = scorer.calculate_scores()
+    result_scores = scorer.calculate_scores_for_profiling_test()
     # print('result_scores =', result_scores)
 
     with open(os.path.join(BASE_DIR, 'example_output', 'result_scores.json'), 'w', encoding='utf-8') as fh:

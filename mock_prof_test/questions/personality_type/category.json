@@ -8,7 +8,7 @@
       "No"
     ],
     "answer_structure": {
-      "type": "single",
+      "question_type": "single",
       "options": [
         "Yes",
         "No"
@@ -40,7 +40,7 @@
       "Go with the flow"
     ],
     "answer_structure": {
-      "type": "single",
+      "question_type": "single",
       "options": [
         "Plan every detail",
         "Go with the flow"
@@ -72,7 +72,7 @@
       "Look for patterns and possibilities"
     ],
     "answer_structure": {
-      "type": "single",
+      "question_type": "single",
       "options": [
         "Rely on past experiences",
         "Look for patterns and possibilities"
@@ -104,7 +104,7 @@
       "Consider people's feelings"
     ],
     "answer_structure": {
-      "type": "single",
+      "question_type": "single",
       "options": [
         "Analyze the facts",
         "Consider people's feelings"

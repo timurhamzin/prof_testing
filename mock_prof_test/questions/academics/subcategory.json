@@ -5,7 +5,7 @@
     "question_type": "list-matching",
     "options": ["Mathematics", "Biology", "Literature", "Computer Science"],
     "answer_structure": {
-      "type": "list-matching",
+      "question_type": "list-matching",
       "options": ["Architect", "Physician", "Novelist", "Software Developer"]
     },
     "scoring_details": {
