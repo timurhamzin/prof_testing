@@ -1,0 +1,2402 @@
+[
+  {
+    "id": 1,
+    "question_text": "Мне легче что-либо сделать, чем объяснить, почему я так сделал(а).",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "question_text": "Я люблю настраивать программы для компьютера.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "question_text": "Я люблю читать художественную литературу.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "question_text": "Я люблю живопись (скульптуру).",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "question_text": "Я не предпочел(а) бы работу, в которой все четко определено.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "question_text": "Мне проще усвоить что-либо, если я имею возможность манипулировать предметами.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "question_text": "Я люблю шахматы, шашки.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "question_text": "Я легко излагаю свои мысли как в устной, так и в письменной форме.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "question_text": "Я хотел(а) бы заниматься коллекционированием.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "question_text": "Я люблю и понимаю абстрактную живопись.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "question_text": "Я скорее хотел(а) бы быть слесарем, чем инженером.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "question_text": "Для меня алгебра интереснее, чем геометрия.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "question_text": "В художественной литературе для меня важнее не что сказано, а как сказано.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 14,
+    "question_text": "Я люблю посещать зрелищные мероприятия.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 15,
+    "question_text": "Мне не нравится регламентированная работа.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "question_text": "Мне нравится что-либо делать своими руками.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 17,
+    "question_text": "В детстве я любил(а) создавать свою систему слов/знаков/шифр для переписки с друзьями.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 18,
+    "question_text": "Я придаю большое значение форме выражения мыслей.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "question_text": "Мне трудно передать содержание рассказа без его образного представления.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 20,
+    "question_text": "Не люблю посещать музеи, так как все они одинаковы.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 21,
+    "question_text": "Любую информацию я воспринимаю как руководство к действию.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "question_text": "Меня больше привлекает товарный знак фирмы, чем ее название.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "question_text": "Меня привлекает работа комментатора радио, телевидения.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "question_text": "Знакомые мелодии вызывают у меня в голове определенные картины.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 25,
+    "question_text": "Люблю фантазировать.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 26,
+    "question_text": "Когда я слушаю музыку, мне хочется танцевать.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 27,
+    "question_text": "Мне интересно разбираться в чертежах и схемах.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 28,
+    "question_text": "Мне нравятся художественная литература.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 29,
+    "question_text": "Знакомый запах вызывает всю картину событий, происшедших много лет назад.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 30,
+    "question_text": "Разнообразные увлечения делают жизнь человека богаче.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 31,
+    "question_text": "Истинно только то, что можно потрогать руками.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 32,
+    "question_text": "Я предпочитаю точные науки.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 33,
+    "question_text": "Я за словом в карман не лезу.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 34,
+    "question_text": "Люблю рисовать.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 35,
+    "question_text": "Один и тот же спектакль/фильм можно смотреть много раз, главное — игра актеров, новая интерпретация.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 36,
+    "question_text": "Мне нравилось в детстве собирать механизмы из деталей конструктора.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 37,
+    "question_text": "Мне кажется, что я смог(ла) бы изучить стенографию.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 38,
+    "question_text": "Мне нравится читать стихи вслух.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 39,
+    "question_text": "Я согласен(а) с утверждением, что красота спасет мир.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 40,
+    "question_text": "Я предпочел(а) бы быть закройщиком, а не портным.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 41,
+    "question_text": "Лучше сделать табуретку руками, чем заниматься ее проектированием.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 42,
+    "question_text": "Мне кажется, что я смог(ла) бы овладеть профессией программиста.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 43,
+    "question_text": "Люблю поэзию.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 44,
+    "question_text": "Прежде чем изготовить какую-то деталь, сначала я делаю чертеж.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 45,
+    "question_text": "Мне больше нравится процесс деятельности, чем ее конечный результат.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 46,
+    "question_text": "Для меня лучше поработать в мастерской, нежели изучать чертежи.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 47,
+    "question_text": "Мне интересно было бы расшифровать древние тайнописи.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 48,
+    "question_text": "Если мне нужно выступить, то я всегда готовлю свою речь, хотя уверен(а), что найду необходимые слова.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 49,
+    "question_text": "Больше люблю решать задачи по геометрии, чем по алгебре.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 50,
+    "question_text": "Даже в отлаженном деле пытаюсь творчески изменить что-то.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 51,
+    "question_text": "Я люблю дома заниматься рукоделием, мастерить.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 52,
+    "question_text": "Я смог(ла) бы овладеть языками программирования.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 53,
+    "question_text": "Мне нетрудно написать сочинение на заданную тему.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 54,
+    "question_text": "Мне легко представить образ несуществующего предмета или явления.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 55,
+    "question_text": "Я иногда сомневаюсь даже в том, что для других очевидно.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 56,
+    "question_text": "Я предпочел(а) бы сам(а) отремонтировать утюг, нежели нести его в мастерскую.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 57,
+    "question_text": "Я легко усваиваю грамматические конструкции языка.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 58,
+    "question_text": "Люблю писать письма.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 59,
+    "question_text": "Сюжет кинофильма могу представить как ряд образов.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 60,
+    "question_text": "Абстрактные картины дают большую пищу для размышлений.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 61,
+    "question_text": "В школе мне больше всего нравились уроки труда, домоводства.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 62,
+    "question_text": "У меня не вызывает затруднений изучение иностранного языка.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 63,
+    "question_text": "Я охотно что-то рассказываю, если меня просят друзья.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 64,
+    "question_text": "Я легко могу представить в образах содержание услышанного.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 65,
+    "question_text": "Я не хотел(а) бы подчинять свою жизнь определенной системе.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 66,
+    "question_text": "Я чаще сначала сделаю, а потом думаю о правильности, решения.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 67,
+    "question_text": "Думаю, что смог(ла) бы изучить китайские иероглифы.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 68,
+    "question_text": "Не могу не поделиться только что услышанной новостью.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 69,
+    "question_text": "Мне кажется, что работа сценариста/писателя интересна.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 70,
+    "question_text": "Мне нравится работа дизайнера.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 71,
+    "question_text": "При решении какой-то проблемы мне легче идти методом проб и ошибок.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Предметное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 72,
+    "question_text": "Изучение дорожных знаков не составило / не составит мне труда.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Символическое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 73,
+    "question_text": "Я легко нахожу общий язык с незнакомыми людьми.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Знаковое мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 74,
+    "question_text": "Меня привлекает работа художника-оформителя.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Образное мышление",
+          "score": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 75,
+    "question_text": "Не люблю ходить одним и тем же путем.",
+    "question_type": "single",
+    "options": [
+      "Да",
+      "Нет"
+    ],
+    "answer_structure": {
+      "question_type": "single",
+      "options": [
+        "Да",
+        "Нет"
+      ]
+    },
+    "scoring_details": {
+      "Да": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 1
+        }
+      ],
+      "Нет": [
+        {
+          "dimension": "personality type",
+          "category": "Креативность",
+          "score": 0
+        }
+      ]
+    }
+  }
+]

@@ -2,7 +2,7 @@ from score import ProfilingTestScoring, adjust_subcategory_scores
 from utils import load_and_merge_questions, load_answers, export_results
 
 
-def run_mock_test(export=False):
+def collect_mock_results(export=False):
     """Run a profiling test on mock questions and answers to generate result scores."""
     questions_table = load_and_merge_questions()
     answers_table = load_answers()
@@ -15,4 +15,4 @@ def run_mock_test(export=False):
 
 
 if __name__ == '__main__':
-    run_mock_test()
+    collect_mock_results()

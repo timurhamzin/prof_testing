@@ -8,7 +8,7 @@ Functions:
 import plotly.express as px
 import streamlit as st
 
-from run_mock import run_mock_test
+from mock_scores import collect_mock_results
 from score import adjust_subcategory_scores
 
 
@@ -56,7 +56,7 @@ def visualize_adjusted_scores(result_scores, columns=3, show_zero_scores=True):
 
 
 if __name__ == '__main__':
-    raw_test_results = run_mock_test()
+    raw_test_results = collect_mock_results()
     adjusted_scores = adjust_subcategory_scores(raw_test_results)
     st.title('Profiling Test Results')
     visualize_adjusted_scores(adjusted_scores, show_zero_scores=True)
