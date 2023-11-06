@@ -32,12 +32,12 @@ def load_and_merge_questions() -> List[Dict]:
             category_path = dimension_folder / 'category.json'
             subcategory_path = dimension_folder / 'subcategory.json'
             if category_path.exists():
-                with open(category_path, 'r') as f:
-                    category_questions = json.load(f, encoding='utf-8')
+                with open(category_path, 'r', encoding='utf-8') as f:
+                    category_questions = json.load(f)
                     merged_questions.extend(category_questions)
             if subcategory_path.exists():
-                with open(subcategory_path, 'r') as f:
-                    subcategory_questions = json.load(f, encoding='utf-8')
+                with open(subcategory_path, 'r', encoding='utf-8') as f:
+                    subcategory_questions = json.load(f)
                     merged_questions.extend(subcategory_questions)
     return merged_questions
 
@@ -46,7 +46,7 @@ def load_answers() -> List[Dict]:
     """Load answers from a JSON file."""
     answers_fpath = Path('mock_prof_test/example_data/answers_table.json')
     with open(answers_fpath, 'r', encoding='utf-8') as f:
-        return json.load(f, encoding='utf-8')
+        return json.load(f)
 
 
 def export_results(questions_table, answers_table, result_scores, adjusted_scores=None):
