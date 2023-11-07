@@ -1,1 +1,1 @@
-MOCK_PROFTEST_DIR = 'MCSCA_test'
+MOCK_PROFTEST_DIR = 'mock_prof_test'

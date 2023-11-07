@@ -3,12 +3,7 @@
     "id": 4,
     "question_text": "Do you prefer practical or theoretical approaches?",
     "question_type": "single",
-    "options": [
-      "Practical",
-      "Theoretical"
-    ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Practical",
         "Theoretical"
@@ -35,14 +30,7 @@
     "id": 5,
     "question_text": "Select the activities you enjoy:",
     "question_type": "multiple",
-    "options": [
-      "Solving complex problems",
-      "Creating new designs",
-      "Analyzing data",
-      "Building or repairing things"
-    ],
     "answer_structure": {
-      "question_type": "multiple",
       "options": [
         "Solving complex problems",
         "Creating new designs",
@@ -85,14 +73,7 @@
     "id": 6,
     "question_text": "Which of these roles do you see yourself fitting into the most?",
     "question_type": "multiple",
-    "options": [
-      "Visionary",
-      "Strategist",
-      "Implementer",
-      "Evaluator"
-    ],
     "answer_structure": {
-      "question_type": "multiple",
       "options": [
         "Visionary",
         "Strategist",

@@ -8,7 +8,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -40,7 +39,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -72,7 +70,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -104,7 +101,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -136,7 +132,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -168,7 +163,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -200,7 +194,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -232,7 +225,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -264,7 +256,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -296,7 +287,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -328,7 +318,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -360,7 +349,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -392,7 +380,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -424,7 +411,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -456,7 +442,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -488,7 +473,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -520,7 +504,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -552,7 +535,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -584,7 +566,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -616,7 +597,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -648,7 +628,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -680,7 +659,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -712,7 +690,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -744,7 +721,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -776,7 +752,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -808,7 +783,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -840,7 +814,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -872,7 +845,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -904,7 +876,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -936,7 +907,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -968,7 +938,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1000,7 +969,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1032,7 +1000,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1064,7 +1031,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1096,7 +1062,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1128,7 +1093,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1160,7 +1124,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1192,7 +1155,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1224,7 +1186,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1256,7 +1217,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1288,7 +1248,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1320,7 +1279,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1352,7 +1310,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1384,7 +1341,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1416,7 +1372,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1448,7 +1403,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1480,7 +1434,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1512,7 +1465,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1544,7 +1496,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1576,7 +1527,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1608,7 +1558,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1640,7 +1589,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1672,7 +1620,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1704,7 +1651,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1736,7 +1682,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1768,7 +1713,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1800,7 +1744,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1832,7 +1775,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1864,7 +1806,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1896,7 +1837,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1928,7 +1868,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1960,7 +1899,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -1992,7 +1930,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -2024,7 +1961,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -2056,7 +1992,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -2088,7 +2023,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -2120,7 +2054,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -2152,7 +2085,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -2184,7 +2116,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -2216,7 +2147,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -2248,7 +2178,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -2280,7 +2209,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -2312,7 +2240,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -2344,7 +2271,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"
@@ -2376,7 +2302,6 @@
       "Нет"
     ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Да",
         "Нет"

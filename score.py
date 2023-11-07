@@ -50,7 +50,7 @@ class ProfilingTestScoring:
                        or_option_value: Optional[str] = None):
         """Process the scoring for a given question option."""
         if option_index is not None:
-            scorings = question['scoring_details'].get(question['options'][option_index], [])
+            scorings = question['scoring_details'].get(question['answer_structure']['options'][option_index], [])
         elif or_option_value is not None:
             scorings = question['scoring_details'].get(or_option_value, [])
         else:
@@ -75,7 +75,7 @@ class ProfilingTestScoring:
         """Calculate the total scores for a profiling test."""
         for answer in self.user_answers:
             question = self.fetch_question_by_id(answer['question_id'])
-            if question['answer_structure']['question_type'] in ['multiple', 'single']:
+            if question['question_type'] in ['multiple', 'single']:
                 selected_options = answer['answer'].get('selected')
                 if isinstance(selected_options, list):
                     for option_index in selected_options:
@@ -83,9 +83,9 @@ class ProfilingTestScoring:
                 elif isinstance(selected_options, int):
                     option_index = selected_options
                     self.process_option(question, is_correct=True, option_index=option_index)
-            elif question['answer_structure']['question_type'] == 'open':
+            elif question['question_type'] == 'open':
                 raise NotImplemented('Implement logic for `open` questions in `calculate_scores_for_profiling_test`')
-            elif question['answer_structure']['question_type'] == 'list-matching':
+            elif question['question_type'] == 'list-matching':
                 correct_pairs = question['scoring_details'].get('correct_pairs', {})
                 for option_value, selected_index in answer['answer']['selected'].items():
                     selected_value = question['answer_structure']['options'][selected_index]

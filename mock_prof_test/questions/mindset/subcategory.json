@@ -3,14 +3,7 @@
     "id": 105,
     "question_text": "Which historical era interests you the most?",
     "question_type": "single",
-    "options": [
-      "Renaissance",
-      "Middle Ages",
-      "Ancient Greece",
-      "Modern Era"
-    ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Renaissance",
         "Middle Ages",
@@ -36,14 +29,7 @@
     "id": 106,
     "question_text": "How often do you engage in reading literature?",
     "question_type": "single",
-    "options": [
-      "Frequently",
-      "Occasionally",
-      "Rarely",
-      "Never"
-    ],
     "answer_structure": {
-      "question_type": "single",
       "options": [
         "Frequently",
         "Occasionally",

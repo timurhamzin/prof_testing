@@ -56,7 +56,7 @@ def fetch_answers_for_user(user_id, stored_answer_key=None):
             if stored_answer_key is not None and stored_answer_key != stored_answer_key:
                 continue
             selected_answers = {}
-            for option in question['options']:
+            for option in question['answer_structure']['options']:
                 stored_option_key = get_stored_answer_key(f'{question_id}_{option}')
                 if stored_option_key in st.session_state:
                     selected_answers[option] = st.session_state[stored_option_key]
@@ -97,12 +97,12 @@ def handle_single_question(question, col):
     stored_answer = st.session_state[stored_answer_key]
 
     answer = col.radio(
-        'Select an option:', question['options'],
+        'Select an option:', question['answer_structure']['options'],
         index=stored_answer,
         key=f'answer_{question_id}'
     )
 
-    new_answer_index = question['options'].index(answer)
+    new_answer_index = question['answer_structure']['options'].index(answer)
     if new_answer_index != stored_answer:
         st.session_state[stored_answer_key] = new_answer_index
         st.rerun()
@@ -116,12 +116,12 @@ def handle_multiple_question(question, col2):
         return
     stored_indices = st.session_state.get(stored_answer_key, [])
     answer = col2.multiselect(
-        'Select one or more options:', question['options'],
-        default=[question['options'][i] for i in stored_indices],
+        'Select one or more options:', question['answer_structure']['options'],
+        default=[question['answer_structure']['options'][i] for i in stored_indices],
         key=f'answer_{question_id}'
     )
 
-    new_answer_indices = [question['options'].index(opt) for opt in answer]
+    new_answer_indices = [question['answer_structure']['options'].index(opt) for opt in answer]
     if new_answer_indices != stored_indices:
         st.session_state[stored_answer_key] = new_answer_indices
         st.rerun()
@@ -130,7 +130,7 @@ def handle_multiple_question(question, col2):
 
 def handle_list_matching_question(question, col2):
     answer = {}
-    for option in question['options']:
+    for option in question['answer_structure']['options']:
         question_id = question['id']
         stored_answer_key = get_stored_answer_key(f'{question_id}_{option}')
 
