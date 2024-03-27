@@ -167,7 +167,7 @@ def initialize():
         DEBUG = True
     elif isinstance(DEBUG, str) and DEBUG.lower() == 'false':
         DEBUG = False
-    filter_param = query_params.get('filter', [""])[0]  # default to an empty string
+    filter_param = query_params.get('filter', [""])[0]
     filters = filter_param.split(',')
     if isinstance(filters, list):  # Ensure it's a list
         filters = [str(f) for f in filters]  # Convert all to string just in case
@@ -191,12 +191,12 @@ def render_current_question(questions, debug):
 
         if col1.button('Previous') and st.session_state['current_question_index'] > 0:
             st.session_state['current_question_index'] -= 1
-            validate_current_question_index()  # Add this line
+            validate_current_question_index()
             rerun_script()
 
         if col3.button('Next') and st.session_state['current_question_index'] < len(questions) - 1:
             st.session_state['current_question_index'] += 1
-            validate_current_question_index()  # Add this line
+            validate_current_question_index()
             rerun_script()
 
         question: dict = questions[st.session_state['current_question_index']]
